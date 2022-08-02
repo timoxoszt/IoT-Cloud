@@ -1,4 +1,4 @@
-FROM php:8.1.0alpha3-fpm-alpine
+FROM php:8.1.5-fpm-alpine
 
 LABEL developer="Vi Minh Tien"
 
@@ -55,7 +55,7 @@ COPY --chown=www:www . /var/www
 # Change current user to www
 USER www
 
-
+RUN composer update
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
