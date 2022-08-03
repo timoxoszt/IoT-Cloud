@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
+            $table->string('uuid')->unique();
             $table->string('device');
             $table->string('value');
             $table->unsignedBigInteger('user_id');
