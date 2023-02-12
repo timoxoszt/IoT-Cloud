@@ -18,8 +18,10 @@ class Feature extends JsonResource
         $author = DB::table('users')->where('id', $this->user_id)->first();
         if(is_null($author)){
             $author_name = "Author is not exist.";
+            $author_id = 0;
         }else{
             $author_name = $author->name;
+            $author_id = $author->id;
         };
 
         return [
@@ -29,6 +31,7 @@ class Feature extends JsonResource
             'type' => $this->type,
             'note' => $this->note,
             'author' => $author_name,
+            'author_id' => $author_id,
         ];
     }
 }
