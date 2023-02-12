@@ -39,7 +39,7 @@ RUN wget https://getcomposer.org/composer-stable.phar -O /usr/local/bin/composer
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN composer install --no-scripts --no-autoloader
+# RUN composer install --no-scripts --no-autoloader --ignore-platform-reqs
 
 RUN apk add nano
 # Add user for laravel application
@@ -55,7 +55,7 @@ COPY --chown=www:www . /var/www
 # Change current user to www
 USER www
 
-RUN composer update
+# RUN composer update
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
