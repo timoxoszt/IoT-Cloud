@@ -26,6 +26,8 @@ class Feature extends JsonResource
             'uuid' => $this->uuid,
             'device' => $this->device,
             'value' => $this->value,
+            'type' => $this->type,
+            'note' => $this->note,
             'author' => $author_name,
         ];
     }
