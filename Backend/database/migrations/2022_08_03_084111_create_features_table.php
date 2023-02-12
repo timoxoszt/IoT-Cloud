@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('uuid')->unique();
             $table->string('device');
             $table->string('value');
+            $table->string('type');
+            $table->string('note')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

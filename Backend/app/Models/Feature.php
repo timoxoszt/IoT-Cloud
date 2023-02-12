@@ -14,5 +14,7 @@ class Feature extends Model
         'user_id',
         'device',
         'value',
+        'type',
+        'note',
     ];
 }

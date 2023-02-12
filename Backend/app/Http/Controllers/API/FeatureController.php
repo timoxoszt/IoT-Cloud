@@ -26,6 +26,8 @@ class FeatureController extends BaseController
             'user_id' => $authUser->id,
             'device' => $request->device,
             'value' => $request->value,
+            'type' => $request->type,
+            'note' => $request->note,
         ]);
         return $this->sendResponse(new FeatureResource($feature), 'Feature created.');
     }   
@@ -47,6 +49,8 @@ class FeatureController extends BaseController
         try{
             $feature->device = $input['device'];
             $feature->value = $input['value'];
+            $feature->type = $input['type'];
+            $feature->note = $input['note'];
             $feature->save();
         }catch(\Exception $e){
             return $this->sendError('Permission denied.');
